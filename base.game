@@ -1,0 +1,45 @@
+#Levels
+
+#init
+import random
+import time
+a = 5
+x = random.randint(0,a)
+
+#Functions
+
+def levels():
+    level = input("Would you like easy, medium, or hard? ")
+    if level == "easy":
+        password()
+    elif level == "medium":
+        a+15
+        password()
+    elif level == "hard":
+        a+25
+        password()
+
+def password():
+    for i in range(1,6):
+        check = int(input("You have 5 guesses total. Enter password: "))
+        if check == x:
+            end=time.time()
+            print("Access granted!")
+            break
+        elif i == 5:
+            print("You have no more guesses left.")
+            break
+        elif check <= x+3 or check >= x-3:
+            print("Warm! Try again.")
+            continue
+        elif check == x+1 or check == x-1:
+            print("Hot! Try again.")
+            continue
+        elif check >= x+4 or check <= x-4:
+            print("Cold. Try again.")
+            continue
+
+
+#Main
+levels()
+passwords()

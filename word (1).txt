@@ -1,0 +1,11 @@
+#Isabella Yan
+
+#function
+def word_counter (text):
+    x=text.split()
+    print (x)
+    y = len(x)
+    print (f" Number of words: {y}")
+
+#main
+word_counter ("Hello World")
